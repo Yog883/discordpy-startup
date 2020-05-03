@@ -14,17 +14,6 @@ dlist={'威圧':15, '言いくるめ':5, '医学':1, '運転':20, '応急手当'
 def mdrand():
     return random.randint(1,100)
 
-@bot
-async def diceroll(ctx,what,name):
-    dicenum = mdrand()
-    if dicenum = 1:
-        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  クリティカル(決定的成功)！！')
-    elif dicenum <= klist[what]:
-        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  成功！')
-    else:
-        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  失敗...')
-    return
-
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
@@ -33,7 +22,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def status(ctx):
-    await ctx.send('準備中... v0.86')
+    await ctx.send('準備中... v0.87')
 
 @bot.command()
 async def what(ctx, what):
@@ -44,20 +33,28 @@ async def k(ctx, what):
     if what not in dlist:
         await ctx.send(f'{what}ロールが登録されていません。')
         return
+    name = 'キリコ'
     dicenum = mdrand()
-    await ctx.send(f'キリコの{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  クリティカル(決定的成功)！！')
-#    if dicenum = 1:
-#    elif dicenum <= klist[what]:
-#        await ctx.send(f'キリコの{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  成功！')
-#    else:
-#        await ctx.send(f'キリコの{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  失敗...')
+    if dicenum = 1:
+        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  クリティカル(決定的成功)！！')
+    elif dicenum <= klist[what]:
+        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  成功！')
+    else:
+        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  失敗...')
 
-#@bot.command()
-#async def d(ctx, what):
-#    if what not in dlist:
-#        await ctx.send(f'{what}ロールが登録されていません。')
-#        return
-#    name = '医者'
-#    diceroll(ctx,what,name)
+@bot.command()
+async def d(ctx, what):
+    if what not in dlist:
+        await ctx.send(f'{what}ロールが登録されていません。')
+        return
+    name = '医者'
+    dicenum = mdrand()
+    if dicenum = 1:
+        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  クリティカル(決定的成功)！！')
+    elif dicenum <= klist[what]:
+        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  成功！')
+    else:
+        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  失敗...')
+    return
 
 bot.run(token)
