@@ -15,7 +15,10 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def status(ctx):
-    await ctx.send('準備中3')
+    await ctx.send('準備中4')
+
+async def mdrand():
+    return random.randint(1,100)
 
 @bot.command()
 async def what(ctx, what):
@@ -23,12 +26,12 @@ async def what(ctx, what):
 
 @bot.command()
 async def k(ctx, what):
-    dicenum = random.randint(1,100)
+    dicenum = mdrand()
     await ctx.send(f'キリコの{what}ロール → '+str(dicenum)+'!  成功？')
 
 @bot.command()
 async def d(ctx, what):
     dicenum = random.randint(1,100)
-    await ctx.send(f'医者の{what}ロール → '+str(random.randint(1,100))+'!  成功？')
+    await ctx.send(f'医者の{what}ロール → '+str(dicenum)+'!  成功？')
 
 bot.run(token)
