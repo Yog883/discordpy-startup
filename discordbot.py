@@ -1,4 +1,5 @@
 from discord.ext import commands
+import random
 import os
 import traceback
 
@@ -19,10 +20,10 @@ async def ping(ctx):
 
 @bot.command()
 async def status(ctx):
-    await ctx.send('準備中1')
+    await ctx.send('準備中2')
 
 @bot.command()
 async def what(ctx, what):
-    await ctx.send(f'{what}とはなんですか？')
+    await ctx.send(f'{what}を振りました'+str(random.randint(1,100)))
         
 bot.run(token)
