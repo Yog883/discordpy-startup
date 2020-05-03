@@ -22,7 +22,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def status(ctx):
-    await ctx.send('準備中... v0.87')
+    await ctx.send('準備中... v0.88')
 
 @bot.command()
 async def what(ctx, what):
@@ -34,27 +34,28 @@ async def k(ctx, what):
         await ctx.send(f'{what}ロールが登録されていません。')
         return
     name = 'キリコ'
+    await ctx.send(f'キリリンの{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  クリティカル(決定的成功)！！')
     dicenum = mdrand()
-    if dicenum = 1:
-        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  クリティカル(決定的成功)！！')
-    elif dicenum <= klist[what]:
-        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  成功！')
-    else:
-        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  失敗...')
+#    if dicenum = 1:
+#        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  クリティカル(決定的成功)！！')
+#    elif dicenum <= klist[what]:
+#        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  成功！')
+#    else:
+#        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  失敗...')
 
-@bot.command()
-async def d(ctx, what):
-    if what not in dlist:
-        await ctx.send(f'{what}ロールが登録されていません。')
-        return
-    name = '医者'
-    dicenum = mdrand()
-    if dicenum = 1:
-        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  クリティカル(決定的成功)！！')
-    elif dicenum <= klist[what]:
-        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  成功！')
-    else:
-        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  失敗...')
-    return
+#@bot.command()
+#async def d(ctx, what):
+#    if what not in dlist:
+#        await ctx.send(f'{what}ロールが登録されていません。')
+#        return
+#    name = '医者'
+#    dicenum = mdrand()
+#    if dicenum = 1:
+#        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  クリティカル(決定的成功)！！')
+#    elif dicenum <= klist[what]:
+#        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  成功！')
+#    else:
+#        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  失敗...')
+#    return
 
 bot.run(token)
