@@ -22,7 +22,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def status(ctx):
-    await ctx.send('準備中... v0.89')
+    await ctx.send('準備中... v0.90')
 
 @bot.command()
 async def what(ctx, what):
@@ -35,14 +35,15 @@ async def k(ctx, what):
         return
     name = 'キリコ'
     dicenum = mdrand()
+    mresult = "失敗..."
+    judge = klist[what]
     if dicenum = 1:
-        await ctx.send(name + f'の{what}ロール(' + str(klist[what]) + ') → ' + str(dicenum) + '!  クリティカル(決定的成功)！！')
-    #elif dicenum <= klist[what]:
-    #    await ctx.send(name + f'の{what}ロール(' + str(klist[what]) + ') → ' + str(dicenum) + '!  成功！')
+        mresult = '!  クリティカル(決定的成功)！！'
+    elif dicenum <= judge:
+        mresult = '!  成功！'
     else:
-        await ctx.send(name + f'の{what}ロール(' + str(klist[what]) + ') → ' + str(dicenum) + '!  失敗...')
-    return
-
+        mresult = '!  失敗...'
+    
 #@bot.command()
 #async def d(ctx, what):
 #    if what not in dlist:
