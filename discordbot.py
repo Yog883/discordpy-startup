@@ -38,7 +38,7 @@ async def k(ctx, what):
     mresult = '失敗...'
     judge = klist[what]
     if dicenum = 1:
-        mresult = '!  クリティカル(決定的成功)！！'
+        mresult = '！　クリティカル(決定的成功)！！'
     #elif dicenum <= judge:
     #    mresult = '!  成功！'
     #else:
