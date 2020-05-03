@@ -30,7 +30,7 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
 
 @bot.command()
-async def status(ctx):
+async def botstatus(ctx):
     await ctx.send('準備中... v1.00')
 
 @bot.command()
