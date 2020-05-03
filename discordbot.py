@@ -27,7 +27,7 @@ async def k(ctx, what):
     await ctx.send(f'キリコの{what}ロール -->'+str(dicenum)+'!  成功？')
 
 @bot.command()
-async def k(ctx, what):
+async def d(ctx, what):
     await ctx.send(f'医者の{what}ロール -->'+str(random.randint(1,100))+'!  成功？')
 
 bot.run(token)
