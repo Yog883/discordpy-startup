@@ -1,37 +1,27 @@
-#Discord.pyの読み込み
+# インストールした discord.py を読み込む
 import discord
-from discord.ext import commands
-import os
-import traceback
 
-bot = commands.Bot(command_prefix='/')
-token = os.environ['DISCORD_BOT_TOKEN']
+# 自分のBotのアクセストークンに置き換えてください
+TOKEN = 'THi5IsDuMMyaCCesSTOK3n00.Cl2FMQ.ThIsi5DUMMyAcc3s5ToKen0000'
 
+# 接続に必要なオブジェクトを生成
+client = discord.Client()
 
-@bot.event
-async def on_command_error(ctx, error):
-    orig_error = getattr(error, "original", error)
-    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-    await ctx.send(error_msg)
+# 起動時に動作する処理
+@client.event
+async def on_ready():
+    # 起動したらターミナルにログイン通知が表示される
+    print('ログインしました')
 
+# メッセージ受信時に動作する処理
+@client.event
+async def on_message(message):
+    # メッセージ送信者がBotだった場合は無視する
+    if message.author.bot:
+        return
+    # 「/neko」と発言したら「にゃーん」が返る処理
+    if message.content == '/neko':
+        await message.channel.send('にゃーん')
 
-@bot.command()
-async def ping(ctx):
-    await ctx.send('pong2')
-
-#メッセージを取得した時に実行される
-#@client.event
-#async def on_message(message): 
-#
-#    #条件に当てはまるメッセージかチェックし正しい場合は返す
-#    def check(msg):
-#        return msg.author == message.author
-#    
-#    #ユーザーからのメッセージを待つ
-#    wait_message = await client.wait_for("message", check=check)
-#
-#    #取得したメッセージを書き込まれたチャンネルへ送信
-#    await message.channel.send(wait_message.content)
-
-#Botの実行
-bot.run(token)
+# Botの起動とDiscordサーバーへの接続
+client.run(TOKEN)
