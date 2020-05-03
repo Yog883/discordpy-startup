@@ -34,8 +34,8 @@ async def k(ctx, what):
         await ctx.send(f'{what}ロールが登録されていません。')
         return
     name = 'キリコ'
-    await ctx.send(f'キリリンの{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  クリティカル(決定的成功)！！')
     dicenum = mdrand()
+    await ctx.send(name + f'の{what}ロール(' + str(klist[what]) + ') → ' + str(dicenum) + '!  クリティカル(決定的成功)！！')
 #    if dicenum = 1:
 #        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  クリティカル(決定的成功)！！')
 #    elif dicenum <= klist[what]:
