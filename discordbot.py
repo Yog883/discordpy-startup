@@ -21,5 +21,8 @@ async def ping(ctx):
 async def test(ctx):
     await ctx.send('testpong')
 
-
+@bot.command()
+async def what(self, ctx, what):
+    await ctx.send(f'{what}とはなんですか？')
+        
 bot.run(token)
