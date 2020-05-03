@@ -14,6 +14,15 @@ dlist={'威圧':15, '言いくるめ':5, '医学':1, '運転':20, '応急手当'
 def mdrand():
     return random.randint(1,100)
 
+def dicejudge(dicenum, judge)
+    if dicenum == 1:
+        mresult = '！　クリティカル(決定的成功)！！'
+    elif dicenum <= judge:
+        mresult = '！  成功！'
+    else:
+        mresult = '！  失敗...'
+    return mresult
+
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
@@ -22,7 +31,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def status(ctx):
-    await ctx.send('準備中... v0.92')
+    await ctx.send('準備中... v0.93')
 
 @bot.command()
 async def what(ctx, what):
@@ -35,14 +44,7 @@ async def k(ctx, what):
         return
     mname = 'キリコ'
     dicenum = mdrand()
-    mresult = '失敗...'
-    judge = klist[what]
-    if dicenum == 1:
-        mresult = '！　クリティカル(決定的成功)！！'
-    elif dicenum <= judge:
-        mresult = '！  成功！'
-    else:
-        mresult = '！  失敗...'
+    mresult = dicejudge(dicenum, klist[what])
     await ctx.send(mname + f'の{what}ロール(' + str(klist[what]) + ') → ' + str(dicenum) + mresult)
     
 #@bot.command()
