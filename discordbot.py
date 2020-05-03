@@ -31,7 +31,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def status(ctx):
-    await ctx.send('準備中... v0.95')
+    await ctx.send('準備中... v1.00')
 
 @bot.command()
 async def what(ctx, what):
@@ -39,7 +39,7 @@ async def what(ctx, what):
 
 @bot.command()
 async def k(ctx, what):
-    if what not in dlist:
+    if what not in klist:
         await ctx.send(f'{what}ロールが登録されていません。')
         return
     mname = 'キリコ'
@@ -53,7 +53,7 @@ async def chkk(ctx):
     for k in klist:
         if i == 0:
             outlist = ' '
-        outlist = outlist + str(k) + ':' + str(klist[k]) + ','
+        outlist = outlist + str(k) + ':' + str(klist[k]) + ',  '
         i = i + 1
         if i == 10:
             await ctx.send(outlist)
@@ -74,5 +74,27 @@ async def chkk(ctx):
 #    else:
 #        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  失敗...')
 #    return
+@bot.command()
+async def d(ctx, what):
+    if what not in dlist:
+        await ctx.send(f'{what}ロールが登録されていません。')
+        return
+    mname = '医者'
+    dicenum = mdrand()
+    mresult = dicejudge(dicenum, dlist[what])
+    await ctx.send(mname + f'の{what}ロール(' + str(klist[what]) + ') → ' + str(dicenum) + mresult)
+
+@bot.command()
+async def chkd(ctx):
+    i = 0
+    for k in dlist:
+        if i == 0:
+            outlist = ' '
+        outlist = outlist + str(k) + ':' + str(dlist[k]) + ',  '
+        i = i + 1
+        if i == 10:
+            await ctx.send(outlist)
+            i = 0
+    await ctx.send(outlist)
 
 bot.run(token)
