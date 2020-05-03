@@ -6,6 +6,8 @@ import traceback
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
+def mdrand():
+    return random.randint(1,100)
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -16,9 +18,6 @@ async def on_command_error(ctx, error):
 @bot.command()
 async def status(ctx):
     await ctx.send('準備中4')
-
-async def mdrand():
-    return random.randint(1,100)
 
 @bot.command()
 async def what(ctx, what):
