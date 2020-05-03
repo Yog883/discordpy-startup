@@ -13,11 +13,6 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-
-@bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
-
 @bot.command()
 async def status(ctx):
     await ctx.send('準備中2')
@@ -25,5 +20,14 @@ async def status(ctx):
 @bot.command()
 async def what(ctx, what):
     await ctx.send(f'{what}を振りました'+str(random.randint(1,100)))
-        
+
+@bot.command()
+async def k(ctx, what):
+    dicenum = random.randint(1,100)
+    await ctx.send(f'キリコの{what}ロール -->'+str(dicenum)+'!  成功？')
+
+@bot.command()
+async def k(ctx, what):
+    await ctx.send(f'医者の{what}ロール -->'+str(random.randint(1,100))+'!  成功？')
+
 bot.run(token)
