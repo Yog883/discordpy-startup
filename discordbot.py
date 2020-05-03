@@ -31,7 +31,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def status(ctx):
-    await ctx.send('準備中... v0.93')
+    await ctx.send('準備中... v0.94')
 
 @bot.command()
 async def what(ctx, what):
@@ -46,7 +46,12 @@ async def k(ctx, what):
     dicenum = mdrand()
     mresult = dicejudge(dicenum, klist[what])
     await ctx.send(mname + f'の{what}ロール(' + str(klist[what]) + ') → ' + str(dicenum) + mresult)
-    
+
+@bot.command()
+async def ck(ctx):
+    for k in klist:
+        await ctx.send(str(k)+str(klist[k]))
+
 #@bot.command()
 #async def d(ctx, what):
 #    if what not in dlist:
