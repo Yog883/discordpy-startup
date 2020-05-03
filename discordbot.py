@@ -28,6 +28,7 @@ async def what(ctx, what):
 
 @bot.command()
 async def d(ctx, what):
-    await ctx.send(f'医者の{what}ロール →'+str(random.randint(1,100))+'!  成功？')
+    dicenum = random.randint(1,100)
+    await ctx.send(f'医者の{what}ロール → '+str(random.randint(1,100))+'!  成功？')
 
 bot.run(token)
