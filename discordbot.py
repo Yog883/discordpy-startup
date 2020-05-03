@@ -37,12 +37,13 @@ async def k(ctx, what):
     dicenum = mdrand()
     mresult = '失敗...'
     judge = klist[what]
-    if dicenum = 1:
+    if dicenum == 1:
         mresult = '！　クリティカル(決定的成功)！！'
-    #elif dicenum <= judge:
-    #    mresult = '!  成功！'
-    #else:
-    #    mresult = '!  失敗...'
+    elif dicenum <= judge:
+        mresult = '！  成功！'
+    else:
+        mresult = '！  失敗...'
+    await ctx.send(mname + f'の{what}ロール(' + str(klist[what]) + ') → ' + str(dicenum) + mresult)
     
 #@bot.command()
 #async def d(ctx, what):
