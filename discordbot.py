@@ -22,7 +22,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def status(ctx):
-    await ctx.send('準備中... v0.91')
+    await ctx.send('準備中... v0.92')
 
 @bot.command()
 async def what(ctx, what):
@@ -37,8 +37,8 @@ async def k(ctx, what):
     dicenum = mdrand()
     mresult = '失敗...'
     judge = klist[what]
-    #if dicenum = 1:
-    #    mresult = '!  クリティカル(決定的成功)！！'
+    if dicenum = 1:
+        mresult = '!  クリティカル(決定的成功)！！'
     #elif dicenum <= judge:
     #    mresult = '!  成功！'
     #else:
