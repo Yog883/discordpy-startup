@@ -34,4 +34,4 @@ async def ping(ctx):
 #    await message.channel.send(wait_message.content)
 
 #Botの実行
-client.run(TOKEN)
+bot.run(token)
