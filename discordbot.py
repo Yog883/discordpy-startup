@@ -33,12 +33,12 @@ async def k(ctx, what):
     if what not in dlist:
         await ctx.send(f'{what}ロールが登録されていません。')
         return
-    name = 'キリコ'
+    mname = 'キリコ'
     dicenum = mdrand()
-    mresult = '失敗...'
+    #mresult = '失敗...'
     #judge = klist[what]
-    if dicenum = 1:
-        mresult = '!  クリティカル(決定的成功)！！'
+    #if dicenum = 1:
+    #    mresult = '!  クリティカル(決定的成功)！！'
     #elif dicenum <= judge:
     #    mresult = '!  成功！'
     #else:
