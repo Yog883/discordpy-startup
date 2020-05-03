@@ -48,16 +48,17 @@ async def k(ctx, what):
     await ctx.send(mname + f'の{what}ロール(' + str(klist[what]) + ') → ' + str(dicenum) + mresult)
 
 @bot.command()
-async def ck(ctx):
-    i=0
+async def chkk(ctx):
+    i = 0
     for k in klist:
         if i == 0:
-            outlist = ''
-        outlist = str(k) + ':' + str(klist[k]) + ','
-        i=i+1
+            outlist = ' '
+        outlist = outlist + str(k) + ':' + str(klist[k]) + ','
+        i = i + 1
         if i = 10:
             await ctx.send(outlist)
             i = 0
+    await ctx.send(outlist)
 
 #@bot.command()
 #async def d(ctx, what):
