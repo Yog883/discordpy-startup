@@ -55,7 +55,7 @@ async def chkk(ctx):
             outlist = ' '
         outlist = outlist + str(k) + ':' + str(klist[k]) + ','
         i = i + 1
-        if i = 10:
+        if i == 10:
             await ctx.send(outlist)
             i = 0
     await ctx.send(outlist)
