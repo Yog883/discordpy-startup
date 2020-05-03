@@ -14,6 +14,7 @@ dlist={'威圧':15, '言いくるめ':5, '医学':1, '運転':20, '応急手当'
 def mdrand():
     return random.randint(1,100)
 
+@bot
 async def diceroll(ctx,what,name):
     dicenum = mdrand()
     if dicenum = 1:
