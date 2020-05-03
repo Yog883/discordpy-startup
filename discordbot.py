@@ -15,7 +15,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def status(ctx):
-    await ctx.send('準備中2')
+    await ctx.send('準備中3')
 
 @bot.command()
 async def what(ctx, what):
