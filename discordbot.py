@@ -20,7 +20,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def status(ctx):
-    await ctx.send('準備中... v0.81')
+    await ctx.send('準備中... v0.82')
 
 @bot.command()
 async def what(ctx, what):
@@ -29,7 +29,13 @@ async def what(ctx, what):
 @bot.command()
 async def k(ctx, what):
     dicenum = mdrand()
-    await ctx.send(f'キリコの{what}ロール → '+str(dicenum)+'!  成功？')
+    if what not in dlist:
+        await ctx.send(f'{what}ロールが登録されていません。')
+        return
+    if dicenum <= klist[what]:
+        await ctx.send(f'キリコの{what}ロール → '+str(dicenum)+'!  成功！')
+    else:
+        await ctx.send(f'キリコの{what}ロール → '+str(dicenum)+'!  失敗...')            
 
 @bot.command()
 async def d(ctx, what):
