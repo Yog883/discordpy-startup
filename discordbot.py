@@ -6,6 +6,9 @@ import traceback
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
+klist={'one':1, 'two':2, 'three':3}
+dlist={'one':1, 'two':2, 'three':3}
+
 def mdrand():
     return random.randint(1,100)
 
@@ -17,7 +20,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def status(ctx):
-    await ctx.send('準備中...')
+    await ctx.send('準備中... v0.81')
 
 @bot.command()
 async def what(ctx, what):
@@ -30,7 +33,10 @@ async def k(ctx, what):
 
 @bot.command()
 async def d(ctx, what):
-    dicenum = random.randint(1,100)
+    dicenum = mdrand()
+    if what not in dlist:
+        await ctx.send(f'{what}ロールが登録されていません。')
+        return
     await ctx.send(f'医者の{what}ロール → '+str(dicenum)+'!  成功？')
 
 bot.run(token)
