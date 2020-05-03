@@ -39,10 +39,10 @@ async def k(ctx, what):
     judge = klist[what]
     if dicenum = 1:
         mresult = '!  クリティカル(決定的成功)！！'
-    elif dicenum <= judge:
-        mresult = '!  成功！'
-    else:
-        mresult = '!  失敗...'
+    #elif dicenum <= judge:
+    #    mresult = '!  成功！'
+    #else:
+    #    mresult = '!  失敗...'
     
 #@bot.command()
 #async def d(ctx, what):
