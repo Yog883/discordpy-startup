@@ -14,15 +14,15 @@ dlist={'威圧':15, '言いくるめ':5, '医学':1, '運転':20, '応急手当'
 def mdrand():
     return random.randint(1,100)
 
-#def diceroll(ctx,what,name):
-#    dicenum = mdrand()
-#    if dicenum = 1:
-#        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  クリティカル(決定的成功)！！')
-#    elif dicenum <= klist[what]:
-#        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  成功！')
-#    else:
-#        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  失敗...')
-
+def diceroll(ctx,what,name):
+    dicenum = mdrand()
+    if dicenum = 1:
+        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  クリティカル(決定的成功)！！')
+    elif dicenum <= klist[what]:
+        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  成功！')
+    else:
+        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  失敗...')
+    return
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -32,7 +32,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def status(ctx):
-    await ctx.send('準備中... v0.84')
+    await ctx.send('準備中... v0.85')
 
 @bot.command()
 async def what(ctx, what):
