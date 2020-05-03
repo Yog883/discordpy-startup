@@ -22,7 +22,7 @@ async def status(ctx):
     await ctx.send('準備中1')
 
 @bot.command()
-async def what(self, ctx, what):
+async def what(ctx, what):
     await ctx.send(f'{what}とはなんですか？')
         
 bot.run(token)
