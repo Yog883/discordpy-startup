@@ -22,7 +22,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def status(ctx):
-    await ctx.send('準備中... v0.88')
+    await ctx.send('準備中... v0.89')
 
 @bot.command()
 async def what(ctx, what):
@@ -35,13 +35,12 @@ async def k(ctx, what):
         return
     name = 'キリコ'
     dicenum = mdrand()
-    await ctx.send(name + f'の{what}ロール(' + str(klist[what]) + ') → ' + str(dicenum) + '!  クリティカル(決定的成功)！！')
-#    if dicenum = 1:
-#        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  クリティカル(決定的成功)！！')
-#    elif dicenum <= klist[what]:
-#        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  成功！')
-#    else:
-#        await ctx.send(name+f'の{what}ロール('+str(klist[what])+') → '+str(dicenum)+'!  失敗...')
+    if dicenum = 1:
+        await ctx.send(name + f'の{what}ロール(' + str(klist[what]) + ') → ' + str(dicenum) + '!  クリティカル(決定的成功)！！')
+    elif dicenum <= klist[what]:
+        await ctx.send(name + f'の{what}ロール(' + str(klist[what]) + ') → ' + str(dicenum) + '!  成功！')
+    else:
+        await ctx.send(name + f'の{what}ロール(' + str(klist[what]) + ') → ' + str(dicenum) + '!  失敗...')
 
 #@bot.command()
 #async def d(ctx, what):
