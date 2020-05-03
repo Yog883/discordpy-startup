@@ -31,7 +31,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def status(ctx):
-    await ctx.send('準備中... v0.94')
+    await ctx.send('準備中... v0.95')
 
 @bot.command()
 async def what(ctx, what):
@@ -49,8 +49,15 @@ async def k(ctx, what):
 
 @bot.command()
 async def ck(ctx):
+    i=0
     for k in klist:
-        await ctx.send(str(k)+str(klist[k]))
+        if i == 0:
+            outlist = ''
+        outlist = str(k) + ':' + str(klist[k]) + ','
+        i=i+1
+        if i = 10:
+            await ctx.send(outlist)
+            i = 0
 
 #@bot.command()
 #async def d(ctx, what):
