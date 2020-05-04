@@ -44,7 +44,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def botstatus(ctx):
-    await ctx.send('Ready!! v1.02')
+    await ctx.send('Ready!! v1.03')
 
 @bot.command()
 async def what(ctx, what):
@@ -81,7 +81,7 @@ async def d(ctx, what):
     mname = '九鬼'
     dicenum = mdrand()
     mresult = dicejudge(dicenum, dlist[what])
-    await ctx.send(mname + f'の{what}ロール(' + str(klist[what]) + ') → ' + str(dicenum) + mresult)
+    await ctx.send(mname + f'の{what}ロール(' + str(dlist[what]) + ') → ' + str(dicenum) + mresult)
 
 @bot.command()
 async def chkd(ctx):
