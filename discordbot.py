@@ -44,7 +44,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def botstatus(ctx):
-    await ctx.send('Ready!! v1.01')
+    await ctx.send('Ready!! v1.02')
 
 @bot.command()
 async def what(ctx, what):
