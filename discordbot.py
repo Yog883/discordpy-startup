@@ -20,7 +20,16 @@ def dicejudge(dicenum, judge):
     elif dicenum <= judge:
         mresult = '！  成功！'
     else:
-        mresult = '！  失敗...'
+        if judge >= 50:
+            if dicenum == 100:
+                mresult = '！  ファンブル(致命的失敗...)'
+            else:
+                mresult = '！  失敗...'                
+        else:
+            if dicenum >= 96:
+                mresult = '！  ファンブル(致命的失敗...)'
+            else:
+                mresult = '！  失敗...'
     return mresult
 
 @bot.event
