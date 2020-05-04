@@ -96,4 +96,8 @@ async def chkd(ctx):
             i = 0
     await ctx.send(outlist)
 
+@bot.command()
+async def r(ctx, what):
+    return
+
 bot.run(token)
