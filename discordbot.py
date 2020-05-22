@@ -97,6 +97,6 @@ async def chkd(ctx):
 
 @bot.command()
 async def r(ctx, what):
-    return
+    return random.randint(1,100)
 
 bot.run(token)
