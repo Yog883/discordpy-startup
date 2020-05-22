@@ -43,7 +43,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def botstatus(ctx):
-    await ctx.send('Ready!! v1.04')
+    await ctx.send('Ready!! v1.05')
 
 @bot.command()
 async def what(ctx, what):
@@ -97,6 +97,8 @@ async def chkd(ctx):
 
 @bot.command()
 async def r(ctx, what):
-    return random.randint(1,100)
+    i = random.randint(1,100)
+    await ctx.send(str(i))
+    return
 
 bot.run(token)
